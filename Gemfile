@@ -47,4 +47,5 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'growl'
   gem 'growl_notify'
+  gem 'launchy' # Get visual snapshot of what's going on.
 end

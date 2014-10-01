@@ -1,4 +1,16 @@
 <h1>Tasks</h1>
+<%= form_for Task.new do |f| %>
+  <%= f.label :task %>
+  <%= f.text_field :task %>
+  <%= f.submit %>
+<% end %>
+<!-- Generates:
+<form accept-charset="UTF-8" action="/tasks" class="new_task" id="new_task" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="JvxxJGKScbnMf8qvfCn1f2wLMp9mgORSV09SKq5TJhs="></div>
+  <label for="task_task">Task</label>
+  <input id="task_task" name="task[task]" type="text">
+  <input name="commit" type="submit" value="Create Task">
+</form>
+-->
 <ul>
   <% for task in @tasks %>
     <li><%= task.task %></li>
