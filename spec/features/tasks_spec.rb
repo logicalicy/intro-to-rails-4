@@ -30,4 +30,35 @@ RSpec.describe "Tasks", :type => :feature do
     save_and_open_page
   end
 
+  describe "PUT /tasks" do
+    it "edits a task" do
+      visit tasks_path
+      click_link 'Edit'
+
+      expect(current_path).to eq edit_task_path(@task)
+    
+      # expect(page).to have_content 'go to bed'
+      expect(find_field('Task').value).to eq 'go to bed'
+
+      fill_in 'Task', :with => 'updated task'
+      click_button 'Update Task'
+
+      expect(current_path).to eq tasks_path
+
+      expect(page).to have_content 'updated task'
+
+    end
+    it "should not update an empty task" do
+      visit tasks_path
+      click_link 'Edit'
+
+      fill_in 'Task', :with => ''
+
+      click_button 'Update Task'
+
+      expect(current_path).to eq edit_task_path(@task)
+      expect(page).to have_content 'There was an error updating your task.'
+    end
+  end
+
 end
