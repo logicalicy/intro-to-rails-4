@@ -26,3 +26,6 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+Tutorial used for this exercise: "The Intro to Rails Screencast I Wish I Had" http://code.tutsplus.com/tutorials/the-intro-to-rails-screencast-i-wish-i-had--net-22191

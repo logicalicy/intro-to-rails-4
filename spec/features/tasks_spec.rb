@@ -61,4 +61,13 @@ RSpec.describe "Tasks", :type => :feature do
     end
   end
 
+  describe "DELETE /tasks" do
+    it "should delete a task" do
+      visit tasks_path
+      find("#task_#{@task.id}").click_link 'Delete'
+      expect(page).to have_content 'Task has been deleted'
+      expect(page).to have_no_content 'go to bed'
+    end
+  end
+
 end
